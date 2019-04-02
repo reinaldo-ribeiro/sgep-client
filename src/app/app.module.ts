@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ErroMsgComponent } from './compartilhado/erro-msg/erro-msg.component';
+import { ListaPessoasComponent } from './paginas/lista-pessoas/lista-pessoas.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErroMsgComponent,
+    ListaPessoasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

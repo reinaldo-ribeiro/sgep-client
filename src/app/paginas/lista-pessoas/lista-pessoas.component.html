@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <app-erro-msg></app-erro-msg>
+      <div class="text-right">
+        <button type="button" class="btn btn-success" routerLink="/pessoa/inserir">Inserir Pessoa</button>
+      </div>
+      <div class="text-center" *ngIf="!existemPessoas()">
+        Nenhuma pessoa cadastrada!
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3" *ngFor="let pessoa of pessoas">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">{{pessoa.nome}}</p>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-right">
+            <button type="button" class="btn btn-primary btn-sm ml-1" routerLink="/pessoa/editar/{{pessoa.id}}">Editar</button>
+            <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deletePessoa(pessoa.id)">Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
