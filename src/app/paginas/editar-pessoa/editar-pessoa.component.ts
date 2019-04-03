@@ -33,7 +33,7 @@ export class EditarPessoaComponent {
     this.pessoaService.updatePessoa(pessoa)
     .subscribe(
       () => { this.router.navigateByUrl('/'); },
-      () => { this.erroMsgComponent.setError('Erro ao atualizar pessoa'); });
+      (error) => { this.erroMsgComponent.setError(`${ error.error.msg }: ${error.error.errors[0].message}`); });
   }
 
 }

@@ -18,7 +18,7 @@ export class CriarPessoaComponent {
     this.pessoaService.addPessoa(pessoa)
       .subscribe(
         () => { this.router.navigateByUrl('/'); },
-        () => { this.erroMsgComponent.setError('Falha ao salvar pessoa'); });
+        (error) => { this.erroMsgComponent.setError(`${ error.error.msg }: ${error.error.errors[0].message}`); });
   }
 
 }

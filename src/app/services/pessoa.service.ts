@@ -13,7 +13,6 @@ export class PessoaService {
 
   getListaPessoas(): Observable<Pessoa[]>{
     const url = `${environment.baseUrl}/pessoas`;
-    console.log(url);
     return this.http.get<Pessoa[]>(url);
   }
 
