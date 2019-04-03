@@ -1,0 +1,26 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input #nome="ngModel" class="form-control" [class.is-invalid]="!nome.valid && nome.touched" id="nome" name="nome"
+      [(ngModel)]="pessoa.nome" required>
+    <div *ngIf="!nome.valid && nome.touched" class="invalid-feedback">Informe um nome</div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" #email="ngModel" class="form-control" [class.is-invalid]="!email.valid && email.touched"
+      id="email" name="email" [(ngModel)]="pessoa.email" required>
+    <div *ngIf="!nome.valid && nome.touched" class="invalid-feedback">Informe um email</div>
+  </div>
+
+  <div class="form-group">
+      <label for="data_nascimento">Data de nascimento</label>
+      <input type="text" #data_nascimento="ngModel" class="form-control" [class.is-invalid]="!data_nascimento.valid && data_nascimento.touched"
+        id="data_nascimento" name="data_nascimento" [(ngModel)]="pessoa.data_nascimento" required>
+      <div *ngIf="!data_nascimento.valid && data_nascimento.touched" class="invalid-feedback">Informe da sua data de nascimento</div>
+    </div>
+
+  <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Salvar</button>
+
+</form>
