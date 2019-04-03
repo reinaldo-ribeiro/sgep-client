@@ -2,10 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { ErroMsgComponent } from '../../compartilhado/erro-msg/erro-msg.component';
 import { PessoaService } from '../../services/pessoa.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Pessoa } from '../../interfaces/pessoa';
+import { Pessoa } from '../../model/pessoa';
 import { TouchSequence } from 'selenium-webdriver';
 import { ExperienciaProfissionalService } from 'src/app/services/experiencia-profissional.service';
-import { ExperienciaProfissional } from 'src/app/interfaces/experiencia-profissional';
+import { ExperienciaProfissional } from 'src/app/model/experiencia-profissional';
 
 @Component({
   selector: 'app-editar-pessoa',

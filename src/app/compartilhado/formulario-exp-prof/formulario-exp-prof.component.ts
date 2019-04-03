@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ExperienciaProfissional } from 'src/app/interfaces/experiencia-profissional';
+import { ExperienciaProfissional } from 'src/app/model/experiencia-profissional';
 
 @Component({
   selector: 'app-formulario-exp-prof',

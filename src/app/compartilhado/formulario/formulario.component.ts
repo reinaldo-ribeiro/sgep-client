@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
-import { Pessoa } from '../../interfaces/pessoa';
+import { Pessoa } from '../../model/pessoa';
 
 @Component({
   selector: 'app-formulario',
