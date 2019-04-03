@@ -1,0 +1,17 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="empresa">Empresa</label>
+    <input #empresa="ngModel" class="form-control" [class.is-invalid]="!empresa.valid && empresa.touched" id="empresa"
+      name="empresa" [(ngModel)]="experiencia.empresa" required>
+    <div *ngIf="!empresa.valid && empresa.touched" class="invalid-feedback">Informe a empresa</div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Atividades</label>
+    <textarea #atividades="ngModel" [(ngModel)]="experiencia.atividades"
+      [class.is-invalid]="!atividades.valid && atividades.touched" class="form-control" name="atvidades" id="atividades"
+      rows="5" required></textarea>
+    <div *ngIf="!atividades.valid && atividades.touched" class="invalid-feedback">Informe as atividades</div>
+  </div>
+</form>

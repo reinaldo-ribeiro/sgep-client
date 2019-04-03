@@ -10,7 +10,7 @@ import { ListaPessoasComponent } from './paginas/lista-pessoas/lista-pessoas.com
 import { FormularioComponent } from './compartilhado/formulario/formulario.component';
 import { CriarPessoaComponent } from './paginas/criar-pessoa/criar-pessoa.component';
 import { EditarPessoaComponent } from './paginas/editar-pessoa/editar-pessoa.component';
-
+import { FormularioExpProfComponent } from './compartilhado/formulario-exp-prof/formulario-exp-prof.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,8 @@ import { EditarPessoaComponent } from './paginas/editar-pessoa/editar-pessoa.com
     ListaPessoasComponent,
     FormularioComponent,
     CriarPessoaComponent,
-    EditarPessoaComponent
+    EditarPessoaComponent,
+    FormularioExpProfComponent
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,6 @@ export class ListaPessoasComponent implements OnInit {
   }
 
   deletePessoa(id: number) {
-    console.log(id);
     this.pessoaService.deletePessoa(id)
       .subscribe(() => {
         this.getListaPessoas();
@@ -39,11 +38,11 @@ export class ListaPessoasComponent implements OnInit {
 
     const current_date = new Date();
     const current_day = current_date.getDay();
-    const current_month = current_date.getMonth();
+    const current_month = current_date.getMonth() + 1;
     const current_year = current_date.getFullYear();
 
-    const birth_day = +arrData[arrData.length - 1];
-    const birth_month = +arrData[arrData.length - 1];
+    const birth_day = +arrData[arrData.length - 3];
+    const birth_month = +arrData[arrData.length - 2];
     const birth_year = +arrData[arrData.length - 1];
 
     let years = current_year - birth_year;

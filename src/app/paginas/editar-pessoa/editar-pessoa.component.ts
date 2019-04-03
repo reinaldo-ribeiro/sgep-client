@@ -4,6 +4,8 @@ import { PessoaService } from '../../services/pessoa.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pessoa } from '../../interfaces/pessoa';
 import { TouchSequence } from 'selenium-webdriver';
+import { ExperienciaProfissionalService } from 'src/app/services/experiencia-profissional.service';
+import { ExperienciaProfissional } from 'src/app/interfaces/experiencia-profissional';
 
 @Component({
   selector: 'app-editar-pessoa',
@@ -12,10 +14,12 @@ import { TouchSequence } from 'selenium-webdriver';
 })
 export class EditarPessoaComponent {
   public pessoa: Pessoa;
+  public experienciasProfissionais: ExperienciaProfissional[] = [];
   @ViewChild(ErroMsgComponent) erroMsgComponent: ErroMsgComponent;
 
   constructor(
     private pessoaService: PessoaService,
+    private experienciaService: ExperienciaProfissionalService,
     private activetedRoute: ActivatedRoute,
     private router: Router
   ) {
@@ -26,6 +30,7 @@ export class EditarPessoaComponent {
     this.pessoaService.getPessoa(id)
       .subscribe((pessoa: Pessoa) => {
         this.pessoa = pessoa;
+        this.experienciasProfissionais = this.pessoa.experienciasProfissionais;
       }, () => { this.erroMsgComponent.setError('Falha ao obter pessoa'); });
   }
 
