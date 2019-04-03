@@ -27,14 +27,14 @@ export class PessoaService {
     return this.http.post<Pessoa>(url, pessoa);
   }
 
-  updatePessoa(id: number, pessoa: Pessoa): Observable<Pessoa> {
-    const url = `${environment.baseUrl}/pessoas/${id}`;
+  updatePessoa(pessoa: Pessoa): Observable<Pessoa> {
+    const url = `${environment.baseUrl}/pessoas/${pessoa.id}`;
     return this.http.put<Pessoa>(url, pessoa);
   }
 
   deletePessoa(id: number): Observable<Pessoa> {
     const url = `${environment.baseUrl}/pessoas/${id}`;
-    return this.http.delete<Pessoa>(url)
+    return this.http.delete<Pessoa>(url);
   }
 
 }
