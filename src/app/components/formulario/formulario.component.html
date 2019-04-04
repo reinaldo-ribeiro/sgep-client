@@ -18,7 +18,7 @@
     <label for="data_nascimento">Data de nascimento</label>
     <input type="text" #data_nascimento="ngModel" class="form-control"
       [class.is-invalid]="!data_nascimento.valid && data_nascimento.touched" id="data_nascimento" name="data_nascimento"
-      [(ngModel)]="pessoa.data_nascimento" required>
+      [(ngModel)]="pessoa.data_nascimento" required mask="00/00/0000">
     <div *ngIf="!data_nascimento.valid && data_nascimento.touched" class="invalid-feedback">Informe da sua data de
       nascimento</div>
   </div>

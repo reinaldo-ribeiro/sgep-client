@@ -17,23 +17,18 @@ export class CriarPessoaComponent {
   idPessoa: number = null;
 
   addPessoa(pessoa: Pessoa) {
+    pessoa.data_nascimento = this.formatData(pessoa.data_nascimento);
     this.pessoaService.addPessoa(pessoa)
       .subscribe(res => {
         this.idPessoa = res.id;
-        console.log(this.idPessoa);
         this.router.navigateByUrl('/');
       }, error => {
         this.erroMsgComponent.setError(`${error.error.msg}: ${error.error.errors[0].message}`);
       });
   }
 
-  addExperiencia(pessoaId: number) {
-    
+  formatData = data => {
+    return data.substring(0, 2) + "/" + data.substring(2, 4) + "/" + data.substring(4, 8);
   }
 
-  /*
-   .subscribe(
-        () => { this.router.navigateByUrl('/'); },
-        (error) => { this.erroMsgComponent.setError(`${ error.error.msg }: ${error.error.errors[0].message}`); });
-   */
 }

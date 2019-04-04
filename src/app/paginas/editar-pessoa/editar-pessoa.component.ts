@@ -35,10 +35,15 @@ export class EditarPessoaComponent {
   }
 
   updatePessoa(pessoa: Pessoa) {
+    pessoa.data_nascimento = this.formatData(pessoa.data_nascimento);
     this.pessoaService.updatePessoa(pessoa)
-    .subscribe(
-      () => { this.router.navigateByUrl('/'); },
-      (error) => { this.erroMsgComponent.setError(`${ error.error.msg }: ${error.error.errors[0].message}`); });
+      .subscribe(
+        () => { this.router.navigateByUrl('/'); },
+        (error) => { this.erroMsgComponent.setError(`${error.error.msg}: ${error.error.errors[0].message}`); });
+  }
+
+  formatData = data => {
+    return data.substring(0, 2) + "/" + data.substring(2, 4) + "/" + data.substring(4, 8);
   }
 
 }
