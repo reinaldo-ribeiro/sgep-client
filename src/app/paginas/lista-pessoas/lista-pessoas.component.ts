@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Pessoa } from '../../model/pessoa';
-import { ErroMsgComponent } from 'src/app/compartilhado/erro-msg/erro-msg.component';
+import { ErroMsgComponent } from 'src/app/components/erro-msg/erro-msg.component';
 import { PessoaService } from 'src/app/services/pessoa.service';
 
 @Component({

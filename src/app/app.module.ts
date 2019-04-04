@@ -5,12 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ErroMsgComponent } from './compartilhado/erro-msg/erro-msg.component';
+import { ErroMsgComponent } from './components/erro-msg/erro-msg.component';
 import { ListaPessoasComponent } from './paginas/lista-pessoas/lista-pessoas.component';
-import { FormularioComponent } from './compartilhado/formulario/formulario.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 import { CriarPessoaComponent } from './paginas/criar-pessoa/criar-pessoa.component';
 import { EditarPessoaComponent } from './paginas/editar-pessoa/editar-pessoa.component';
-import { FormularioExpProfComponent } from './compartilhado/formulario-exp-prof/formulario-exp-prof.component';
+import { FormularioExpProfComponent } from './components/formulario-exp-prof/formulario-exp-prof.component';
 @NgModule({
   declarations: [
     AppComponent,

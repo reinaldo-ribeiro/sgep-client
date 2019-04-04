@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { ErroMsgComponent } from './compartilhado/erro-msg/erro-msg.component';
+import { ErroMsgComponent } from './components/erro-msg/erro-msg.component';
 
 @Component({
   selector: 'app-root',
